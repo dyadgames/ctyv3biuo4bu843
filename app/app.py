@@ -587,7 +587,7 @@ def novel_view() -> rx.Component:
         stats_overlay(),
         inventory_overlay(),
         id="game-viewport",
-        class_name="relative w-screen h-screen bg-gray-900 overflow-hidden pointer-events-none",
+        class_name="relative w-screen h-screen bg-gray-900 overflow-hidden",
     )
 
 
