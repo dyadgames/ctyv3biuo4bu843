@@ -406,6 +406,13 @@ class GameState(rx.State):
         yield GameState.auto_advance
 
     @rx.event
+    def handle_key_down(self, key: str):
+        if key.lower() == "i":
+            return GameState.toggle_inventory
+        if key.lower() == "c":
+            return GameState.toggle_stats
+
+    @rx.event
     def save_game(self, slot_id: int, thumbnail: str):
         import datetime
 

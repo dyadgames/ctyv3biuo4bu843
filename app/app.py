@@ -37,11 +37,7 @@ def character_sprite(char_sprite: rx.Var[dict]) -> rx.Component:
                 "filter": rx.cond(is_speaking, "brightness(1)", "brightness(0.8)"),
             },
         ),
-        class_name=rx.cond(
-            GameState.is_loading,
-            "absolute transition-opacity duration-500 opacity-0",
-            f"absolute transition-opacity duration-500 opacity-100 {position_class}",
-        ),
+        class_name=f"absolute transition-opacity duration-500 opacity-100 {position_class}",
     )
 
 
@@ -98,7 +94,6 @@ def dialogue_box() -> rx.Component:
             ),
         ),
         class_name="absolute bottom-5 left-5 right-5 md:left-1/4 md:right-1/4 bg-black/70 backdrop-blur-md p-6 rounded-xl border border-gray-700/50 shadow-2xl transition-opacity duration-500 ease-in-out",
-        opacity=rx.cond(GameState.is_loading, "0", "1"),
     )
 
 
@@ -108,7 +103,7 @@ def loading_overlay() -> rx.Component:
         rx.el.div(
             rx.spinner(class_name="text-sky-400", size="3"),
             rx.el.p("Loading...", class_name="text-white mt-4 font-semibold"),
-            class_name="absolute inset-0 bg-black/80 flex flex-col items-center justify-center z-50 transition-opacity duration-300",
+            class_name="absolute inset-0 bg-black/80 flex flex-col items-center justify-center z-[99]",
         ),
         None,
     )
@@ -175,7 +170,6 @@ def top_left_hud() -> rx.Component:
             class_name="mt-2",
         ),
         class_name="absolute top-5 left-5 bg-black/50 backdrop-blur-md p-4 rounded-xl border border-gray-700/50 shadow-lg w-80",
-        opacity=rx.cond(GameState.is_loading, "0", "1"),
     )
 
 
@@ -196,8 +190,7 @@ def top_right_hud() -> rx.Component:
             on_click=lambda: GameState.set_game_mode("info"),
             class_name="p-3 bg-white/10 rounded-full hover:bg-white/20 transition-colors",
         ),
-        class_name="absolute top-5 right-5 flex items-center gap-3 z-10",
-        opacity=rx.cond(GameState.is_loading, "0", "1"),
+        class_name="absolute top-5 right-5 flex items-center gap-3 z-40",
     )
 
 
@@ -451,9 +444,9 @@ def stats_overlay() -> rx.Component:
             class_name="flex justify-between items-center p-4 bg-white/5 rounded-lg",
         )
 
-    return rx.el.div(
-        rx.cond(
-            GameState.stats_open,
+    return rx.cond(
+        GameState.stats_open,
+        rx.el.div(
             rx.el.div(
                 rx.el.div(
                     rx.el.div(
@@ -501,9 +494,9 @@ def stats_overlay() -> rx.Component:
                 ),
                 class_name="w-full max-w-4xl p-6 bg-black/80 backdrop-blur-xl rounded-xl border border-gray-700 shadow-2xl",
             ),
-            None,
+            class_name="absolute inset-0 bg-gray-900/90 backdrop-blur-md flex items-center justify-center z-50",
         ),
-        class_name="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50",
+        None,
     )
 
 
@@ -538,9 +531,9 @@ def inventory_overlay() -> rx.Component:
             class_name="relative w-full aspect-square bg-white/5 rounded-lg flex items-center justify-center border border-transparent hover:border-sky-500 hover:bg-white/10 transition-all",
         )
 
-    return rx.el.div(
-        rx.cond(
-            GameState.inventory_open,
+    return rx.cond(
+        GameState.inventory_open,
+        rx.el.div(
             rx.el.div(
                 rx.el.div(
                     rx.el.h2("Inventory", class_name="text-xl font-bold"),
@@ -557,9 +550,9 @@ def inventory_overlay() -> rx.Component:
                 ),
                 class_name="w-[480px] bg-black/80 backdrop-blur-xl rounded-xl border border-gray-700 shadow-2xl flex flex-col",
             ),
-            None,
+            class_name="absolute inset-0 bg-gray-900/90 backdrop-blur-md flex items-center justify-center z-[60]",
         ),
-        class_name="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50",
+        None,
     )
 
 
@@ -572,7 +565,6 @@ def novel_view() -> rx.Component:
                 "/placeholder.svg",
             ),
             class_name="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out",
-            opacity=rx.cond(GameState.is_loading, "0.5", "1"),
             key=rx.cond(
                 GameState.current_scene, GameState.current_scene["id"], "loading"
             ),
@@ -589,14 +581,13 @@ def novel_view() -> rx.Component:
         top_left_hud(),
         top_right_hud(),
         loading_overlay(),
-        history_overlay(),
-        settings_overlay(),
-        load_menu_overlay(),
-        rx.el.div(
-            stats_overlay(), inventory_overlay(), class_name="w-full h-full absolute"
-        ),
+        rx.cond(GameState.history_open, history_overlay(), None),
+        rx.cond(GameState.settings_open, settings_overlay(), None),
+        rx.cond(GameState.load_menu_open, load_menu_overlay(), None),
+        stats_overlay(),
+        inventory_overlay(),
         id="game-viewport",
-        class_name="relative w-screen h-screen bg-gray-900 overflow-hidden",
+        class_name="relative w-screen h-screen bg-gray-900 overflow-hidden pointer-events-none",
     )
 
 
@@ -701,33 +692,19 @@ def regional_map_view() -> rx.Component:
 
 def index() -> rx.Component:
     return rx.el.main(
+        rx.window_event_listener(
+            on_key_down=lambda key: GameState.handle_key_down(key)
+        ),
         rx.match(
             GameState.game_mode,
             ("novel", novel_view()),
             ("map", map_view()),
             ("info", info_screen_overlay()),
             ("context", context_menu_overlay()),
-            rx.el.div("Invalid game mode"),
+            rx.el.div("Loading..."),
         ),
-        class_name="font-['Roboto'] text-white",
-        on_mount=[
-            GameState.on_load,
-            rx.call_script("""
-                const handleKeyDown = (event) => {
-                    if (event.key === 'i') {
-                        _reflex.event_handlers.game_state_toggle_inventory(event)
-                    }
-                    if (event.key === 'c') {
-                        _reflex.event_handlers.game_state_toggle_stats(event)
-                    }
-                };
-                document.addEventListener('keydown', handleKeyDown);
-                // Return a cleanup function to be called on page unload
-                return () => {
-                    document.removeEventListener('keydown', handleKeyDown);
-                };
-                """),
-        ],
+        on_mount=GameState.on_load,
+        class_name="font-['Roboto'] text-white bg-gray-900",
     )
 
 
@@ -983,7 +960,7 @@ def context_menu_overlay() -> rx.Component:
             class_name="relative w-full h-full flex flex-col items-center justify-center",
             on_mount=ActionState.on_load_context,
         ),
-        class_name="absolute inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center z-50",
+        class_name="absolute inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center z-40",
     )
 
 
