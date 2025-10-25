@@ -1,0 +1,13 @@
+{
+  "id": "mana_potion",
+  "name": "Mana Potion",
+  "description": "Restores a small amount of mana.",
+  "icon": "/placeholder.svg",
+  "item_type": "Consumable",
+  "stackable": true,
+  "max_stack": 99,
+  "properties": {},
+  "effects": {
+    "restore_mana": 30
+  }
+}

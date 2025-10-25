@@ -1,0 +1,18 @@
+{
+  "id": "ancient_sword",
+  "name": "Ancient Sword",
+  "description": "An old sword, it still seems sharp.",
+  "icon": "/placeholder.svg",
+  "item_type": "Equipment",
+  "stackable": false,
+  "max_stack": 1,
+  "properties": {
+    "slot": "main_hand",
+    "damage": 10
+  },
+  "effects": {
+    "stat_boost": {
+      "str": 2
+    }
+  }
+}

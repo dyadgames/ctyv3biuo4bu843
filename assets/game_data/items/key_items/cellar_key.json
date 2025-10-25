@@ -1,0 +1,13 @@
+{
+  "id": "cellar_key",
+  "name": "Cellar Key",
+  "description": "An old, rusty key. Seems to unlock something important.",
+  "icon": "/placeholder.svg",
+  "item_type": "Key Item",
+  "stackable": false,
+  "max_stack": 1,
+  "properties": {},
+  "effects": {
+    "unlocks": "castle_cellar"
+  }
+}

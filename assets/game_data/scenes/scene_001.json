@@ -1,0 +1,36 @@
+{
+  "id": "scene_001",
+  "background": "/placeholder.svg",
+  "characters": [],
+  "dialogue": [
+    {
+      "character": "narrator",
+      "text": "Welcome to the Kingdom of Aetheria, a land of magic and mystery."
+    },
+    {
+      "character": "narrator",
+      "text": "Your journey begins at the crossroads of destiny. Two paths lie before you..."
+    },
+    {
+      "character": "narrator",
+      "text": "Which path will you choose?"
+    }
+  ],
+  "choices": [
+    {
+      "text": "Take the forest path (Meet Elara)",
+      "nextScene": "scene_002",
+      "set_vars": {
+        "chosen_path": "forest"
+      }
+    },
+    {
+      "text": "Take the mountain path (Meet Kain)",
+      "nextScene": "scene_003",
+      "set_vars": {
+        "chosen_path": "mountain"
+      }
+    }
+  ],
+  "nextScene": null
+}

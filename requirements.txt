@@ -1,0 +1,5 @@
+
+reflex==0.8.17a1
+reflex-monaco
+reflex-enterprise
+

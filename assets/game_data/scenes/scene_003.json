@@ -1,0 +1,38 @@
+{
+  "id": "scene_003",
+  "background": "/placeholder.svg",
+  "characters": [
+    {
+      "id": "kain",
+      "position": "left",
+      "sprite": "neutral"
+    }
+  ],
+  "dialogue": [
+    {
+      "character": "kain",
+      "text": "Well, well... another wanderer braves the mountain pass."
+    },
+    {
+      "character": "kain",
+      "text": "I am Kain. I seek a legendary artifact said to be hidden in these peaks. What brings you here?"
+    }
+  ],
+  "choices": [
+    {
+      "text": "Offer to help Kain",
+      "nextScene": "scene_006",
+      "set_vars": {
+        "ally": "kain"
+      }
+    },
+    {
+      "text": "Claim you're just passing through",
+      "nextScene": "scene_007",
+      "set_vars": {
+        "ally": "none"
+      }
+    }
+  ],
+  "nextScene": null
+}

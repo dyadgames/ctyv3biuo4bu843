@@ -1,0 +1,33 @@
+{
+  "id": "region_ironpeak_mountains",
+  "name": "Ironpeak Mountains",
+  "major_location_id": "ironpeak_mountains",
+  "background": "/placeholder.svg",
+  "locations": [
+    {
+      "id": "miners_camp",
+      "name": "Miner's Camp",
+      "type": "Social",
+      "description": "A rugged camp at the base of the mountains.",
+      "available_actions": [
+        "explore",
+        "craft",
+        "rest",
+        "travel"
+      ],
+      "unlock_condition": "true"
+    },
+    {
+      "id": "crystal_cave",
+      "name": "Crystal Cave",
+      "type": "Dungeon",
+      "description": "A glittering cave filled with valuable crystals and danger.",
+      "available_actions": [
+        "explore",
+        "gather",
+        "travel"
+      ],
+      "unlock_condition": "game_vars.ally == 'kain'"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "emerald_forest",
+    "name": "Emerald Forest",
+    "description": "A vast, ancient forest teeming with life and secrets.",
+    "icon": "trees",
+    "x": 25,
+    "y": 60,
+    "unlock_condition": "true"
+  },
+  {
+    "id": "ironpeak_mountains",
+    "name": "Ironpeak Mountains",
+    "description": "Treacherous peaks known for their rich mineral veins.",
+    "icon": "mountain",
+    "x": 45,
+    "y": 30,
+    "unlock_condition": "true"
+  },
+  {
+    "id": "silverwind_city",
+    "name": "Silverwind City",
+    "description": "A bustling metropolis and the kingdom's capital.",
+    "icon": "castle",
+    "x": 35,
+    "y": 50,
+    "unlock_condition": "true"
+  }
+]

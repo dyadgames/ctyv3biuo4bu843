@@ -1,0 +1,38 @@
+[
+  {
+    "id": "pwr",
+    "name": "Power",
+    "description": "Energy output and combat effectiveness.",
+    "icon": "zap"
+  },
+  {
+    "id": "agi",
+    "name": "Agility",
+    "description": "Speed, evasion, and reflexes.",
+    "icon": "move-3d"
+  },
+  {
+    "id": "end",
+    "name": "Endurance",
+    "description": "System durability and resistance.",
+    "icon": "battery-full"
+  },
+  {
+    "id": "tec",
+    "name": "Tech",
+    "description": "Hacking, repairs, and drone control.",
+    "icon": "cpu"
+  },
+  {
+    "id": "psy",
+    "name": "Psionics",
+    "description": "Mental abilities and psychic force.",
+    "icon": "sparkles"
+  },
+  {
+    "id": "cha",
+    "name": "Charm",
+    "description": "Negotiation and crew morale.",
+    "icon": "heart-handshake"
+  }
+]

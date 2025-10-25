@@ -1,0 +1,13 @@
+{
+  "id": "health_potion",
+  "name": "Health Potion",
+  "description": "A simple potion that restores a small amount of health.",
+  "icon": "/placeholder.svg",
+  "item_type": "Consumable",
+  "stackable": true,
+  "max_stack": 99,
+  "properties": {},
+  "effects": {
+    "heal": 50
+  }
+}

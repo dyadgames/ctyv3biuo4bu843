@@ -1,0 +1,10 @@
+{
+  "id": "elara",
+  "name": "Elara",
+  "color": "#3B82F6",
+  "sprites": {
+    "neutral": "/placeholder.svg",
+    "happy": "/placeholder.svg",
+    "sad": "/placeholder.svg"
+  }
+}

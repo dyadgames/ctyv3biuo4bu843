@@ -1,0 +1,23 @@
+{
+  "id": "scene_005",
+  "background": "/placeholder.svg",
+  "characters": [
+    {
+      "id": "elara",
+      "position": "right",
+      "sprite": "sad"
+    }
+  ],
+  "dialogue": [
+    {
+      "character": "elara",
+      "text": "I see... I respect your decision. I must face this threat alone, then."
+    },
+    {
+      "character": "narrator",
+      "text": "You part ways with Elara, wondering what might have been."
+    }
+  ],
+  "choices": [],
+  "nextScene": "action_menu"
+}

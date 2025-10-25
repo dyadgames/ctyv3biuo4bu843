@@ -1,0 +1,8 @@
+{
+  "id": "narrator",
+  "name": "Narrator",
+  "color": "#9CA3AF",
+  "sprites": {
+    "default": "/placeholder.svg"
+  }
+}

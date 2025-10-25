@@ -1,0 +1,44 @@
+[
+  {
+    "id": "explore",
+    "name": "Explore",
+    "description": "Trigger random scenarios or events.",
+    "icon": "/placeholder.svg",
+    "time_cost": 2
+  },
+  {
+    "id": "gather",
+    "name": "Gather",
+    "description": "Collect resources with random rewards.",
+    "icon": "/placeholder.svg",
+    "time_cost": 3
+  },
+  {
+    "id": "travel",
+    "name": "Travel",
+    "description": "Return to the regional or world map.",
+    "icon": "/placeholder.svg",
+    "time_cost": 0
+  },
+  {
+    "id": "train",
+    "name": "Train",
+    "description": "Increase stats through training.",
+    "icon": "/placeholder.svg",
+    "time_cost": 4
+  },
+  {
+    "id": "craft",
+    "name": "Craft",
+    "description": "Combine materials into new items.",
+    "icon": "/placeholder.svg",
+    "time_cost": 2
+  },
+  {
+    "id": "rest",
+    "name": "Rest",
+    "description": "Advance time and restore health/stamina.",
+    "icon": "/placeholder.svg",
+    "time_cost": 4
+  }
+]

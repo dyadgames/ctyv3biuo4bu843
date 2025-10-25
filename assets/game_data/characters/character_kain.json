@@ -1,0 +1,10 @@
+{
+  "id": "kain",
+  "name": "Kain",
+  "color": "#EF4444",
+  "sprites": {
+    "neutral": "/placeholder.svg",
+    "happy": "/placeholder.svg",
+    "angry": "/placeholder.svg"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "iron_ore",
+  "name": "Iron Ore",
+  "description": "A chunk of raw iron ore. Can be used for crafting.",
+  "icon": "/placeholder.svg",
+  "item_type": "Material",
+  "stackable": true,
+  "max_stack": 99,
+  "properties": {},
+  "effects": {}
+}

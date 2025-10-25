@@ -1,0 +1,33 @@
+{
+  "id": "region_emerald_forest",
+  "name": "Emerald Forest",
+  "major_location_id": "emerald_forest",
+  "background": "/placeholder.svg",
+  "locations": [
+    {
+      "id": "whispering_glade",
+      "name": "Whispering Glade",
+      "type": "Exploration",
+      "description": "A tranquil clearing where the wind sounds like whispers.",
+      "available_actions": [
+        "explore",
+        "gather",
+        "rest",
+        "travel"
+      ],
+      "unlock_condition": "true"
+    },
+    {
+      "id": "ancient_oak",
+      "name": "Ancient Oak",
+      "type": "Story",
+      "description": "A colossal tree said to be as old as the kingdom itself.",
+      "available_actions": [
+        "explore",
+        "train",
+        "travel"
+      ],
+      "unlock_condition": "true"
+    }
+  ]
+}

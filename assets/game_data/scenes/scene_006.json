@@ -1,0 +1,27 @@
+{
+  "id": "scene_006",
+  "background": "/placeholder.svg",
+  "characters": [
+    {
+      "id": "kain",
+      "position": "center",
+      "sprite": "happy"
+    }
+  ],
+  "dialogue": [
+    {
+      "character": "kain",
+      "text": "Hah! With two of us, this artifact will be ours in no time."
+    },
+    {
+      "character": "narrator",
+      "text": "Your combined efforts lead you to a hidden chamber where the artifact lies."
+    },
+    {
+      "character": "kain",
+      "text": "An excellent partnership. I'll not forget this."
+    }
+  ],
+  "choices": [],
+  "nextScene": "action_menu"
+}

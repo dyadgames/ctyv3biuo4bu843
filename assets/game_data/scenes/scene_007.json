@@ -1,0 +1,23 @@
+{
+  "id": "scene_007",
+  "background": "/placeholder.svg",
+  "characters": [
+    {
+      "id": "kain",
+      "position": "left",
+      "sprite": "angry"
+    }
+  ],
+  "dialogue": [
+    {
+      "character": "kain",
+      "text": "Just passing through, eh? Fine. Don't get in my way."
+    },
+    {
+      "character": "narrator",
+      "text": "You continue your journey alone, leaving the brooding warrior to his solitary quest."
+    }
+  ],
+  "choices": [],
+  "nextScene": "action_menu"
+}

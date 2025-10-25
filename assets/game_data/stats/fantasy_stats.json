@@ -1,0 +1,38 @@
+[
+  {
+    "id": "str",
+    "name": "Strength",
+    "description": "Physical power and melee damage.",
+    "icon": "sword"
+  },
+  {
+    "id": "dex",
+    "name": "Dexterity",
+    "description": "Agility, accuracy, and initiative.",
+    "icon": "fast-forward"
+  },
+  {
+    "id": "con",
+    "name": "Constitution",
+    "description": "Health, stamina, and resilience.",
+    "icon": "shield"
+  },
+  {
+    "id": "int",
+    "name": "Intelligence",
+    "description": "Magical power and knowledge.",
+    "icon": "brain-circuit"
+  },
+  {
+    "id": "wis",
+    "name": "Wisdom",
+    "description": "Perception and magical resistance.",
+    "icon": "book-open"
+  },
+  {
+    "id": "cha",
+    "name": "Charisma",
+    "description": "Social interactions and leadership.",
+    "icon": "gem"
+  }
+]

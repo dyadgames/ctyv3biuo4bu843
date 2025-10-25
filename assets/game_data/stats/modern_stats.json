@@ -1,0 +1,38 @@
+[
+  {
+    "id": "phy",
+    "name": "Physique",
+    "description": "Overall physical fitness and strength.",
+    "icon": "dumbbell"
+  },
+  {
+    "id": "agi",
+    "name": "Agility",
+    "description": "Coordination and quickness.",
+    "icon": "footprints"
+  },
+  {
+    "id": "vit",
+    "name": "Vitality",
+    "description": "Health and resistance to illness.",
+    "icon": "heart-pulse"
+  },
+  {
+    "id": "int",
+    "name": "Intellect",
+    "description": "Problem-solving and learning.",
+    "icon": "lightbulb"
+  },
+  {
+    "id": "wil",
+    "name": "Willpower",
+    "description": "Mental fortitude and focus.",
+    "icon": "user-check"
+  },
+  {
+    "id": "soc",
+    "name": "Social",
+    "description": "Communication and influence.",
+    "icon": "users"
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "id": "scene_002",
+  "background": "/placeholder.svg",
+  "characters": [
+    {
+      "id": "elara",
+      "position": "right",
+      "sprite": "happy"
+    }
+  ],
+  "dialogue": [
+    {
+      "character": "elara",
+      "text": "Greetings, traveler! I am Elara, guardian of the Emerald Forest."
+    },
+    {
+      "character": "elara",
+      "text": "The forest whispers of dark forces gathering in the north. Will you help me investigate?"
+    }
+  ],
+  "choices": [
+    {
+      "text": "Accept Elara's quest",
+      "nextScene": "scene_004",
+      "set_vars": {
+        "ally": "elara"
+      }
+    },
+    {
+      "text": "Politely decline",
+      "nextScene": "scene_005",
+      "set_vars": {
+        "ally": "none"
+      }
+    }
+  ],
+  "nextScene": null
+}

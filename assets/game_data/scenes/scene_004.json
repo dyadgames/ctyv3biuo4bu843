@@ -1,0 +1,27 @@
+{
+  "id": "scene_004",
+  "background": "/placeholder.svg",
+  "characters": [
+    {
+      "id": "elara",
+      "position": "center",
+      "sprite": "happy"
+    }
+  ],
+  "dialogue": [
+    {
+      "character": "elara",
+      "text": "Wonderful! With your help, we'll surely uncover the source of this darkness."
+    },
+    {
+      "character": "narrator",
+      "text": "You and Elara journey north, facing many challenges and strengthening your bond."
+    },
+    {
+      "character": "elara",
+      "text": "This has been a worthy adventure. Thank you."
+    }
+  ],
+  "choices": [],
+  "nextScene": "action_menu"
+}
