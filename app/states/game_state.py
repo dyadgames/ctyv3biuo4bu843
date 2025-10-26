@@ -136,7 +136,8 @@ class GameState(rx.State):
             self._load_player_stats()
             self._load_all_items()
             self._initialize_inventory()
-            scene_data = self._load_scene(self.current_scene_id)
+        scene_data = await self._load_scene(self.current_scene_id)
+        async with self:
             if scene_data:
                 self.current_scene = scene_data
                 self.history.append(self.current_scene_id)
@@ -220,9 +221,10 @@ class GameState(rx.State):
         except Exception as e:
             logging.exception(f"Error loading player stats: {e}")
 
-    def _load_scene(self, scene_id: str) -> Scene | None:
+    async def _load_scene(self, scene_id: str) -> Scene | None:
         if scene_id == "action_menu":
-            self.set_game_mode("context")
+            async with self:
+                self.game_mode = "context"
             return self.current_scene
         scene_path = f"assets/game_data/scenes/{scene_id}.json"
         if not os.path.exists(scene_path):
@@ -277,7 +279,7 @@ class GameState(rx.State):
     async def change_scene(self, scene_id: str, at_end: bool = False):
         async with self:
             self.is_loading = True
-        scene_data = self._load_scene(scene_id)
+        scene_data = await self._load_scene(scene_id)
         async with self:
             if scene_data:
                 self.current_scene = scene_data

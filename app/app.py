@@ -533,7 +533,7 @@ def inventory_overlay() -> rx.Component:
 
     return rx.cond(
         GameState.inventory_open,
-        rx.el.div(
+        rxe.dnd.draggable(
             rx.el.div(
                 rx.el.div(
                     rx.el.h2("Inventory", class_name="text-xl font-bold"),
@@ -543,6 +543,7 @@ def inventory_overlay() -> rx.Component:
                         class_name="p-2 rounded-full hover:bg-white/20 transition-colors",
                     ),
                     class_name="flex justify-between items-center p-4 border-b border-gray-700 cursor-move",
+                    is_handle=True,
                 ),
                 rx.el.div(
                     rx.foreach(GameState.inventory, lambda slot: item_card(slot)),
@@ -550,7 +551,7 @@ def inventory_overlay() -> rx.Component:
                 ),
                 class_name="w-[480px] bg-black/80 backdrop-blur-xl rounded-xl border border-gray-700 shadow-2xl flex flex-col",
             ),
-            class_name="absolute inset-0 bg-gray-900/90 backdrop-blur-md flex items-center justify-center z-[60]",
+            class_name="absolute top-1/4 left-1/4 z-[60]",
         ),
         None,
     )
